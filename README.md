@@ -16,3 +16,6 @@ delete origin file:
 
 stable version by tutorial of (7)re:  
 安定バージョン。src内にgazebo_ros_pkgsを入れるという2代目ubuntuを殺した原因をしても動いたバージョン。
+
+fix turtlebot commit:
+安定バージョン（のはず）。一個前のバージョンに対してturtlebot3を加えただけ。

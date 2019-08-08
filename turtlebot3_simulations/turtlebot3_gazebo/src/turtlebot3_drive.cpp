@@ -47,7 +47,6 @@ bool Turtlebot3Drive::init()
 
   tb3_pose_ = 0.0;
   prev_tb3_pose_ = 0.0;
-
   // initialize publishers
   cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>(cmd_vel_topic_name, 10);
 
@@ -61,7 +60,7 @@ bool Turtlebot3Drive::init()
 void Turtlebot3Drive::odomMsgCallBack(const nav_msgs::Odometry::ConstPtr &msg)
 {
   double siny = 2.0 * (msg->pose.pose.orientation.w * msg->pose.pose.orientation.z + msg->pose.pose.orientation.x * msg->pose.pose.orientation.y);
-	double cosy = 1.0 - 2.0 * (msg->pose.pose.orientation.y * msg->pose.pose.orientation.y + msg->pose.pose.orientation.z * msg->pose.pose.orientation.z);  
+	double cosy = 1.0 - 2.0 * (msg->pose.pose.orientation.y * msg->pose.pose.orientation.y + msg->pose.pose.orientation.z * msg->pose.pose.orientation.z);
 
 	tb3_pose_ = atan2(siny, cosy);
 }
@@ -144,7 +143,7 @@ bool Turtlebot3Drive::controlLoop()
       if (fabs(prev_tb3_pose_ - tb3_pose_) >= escape_range_)
         turtlebot3_state_num = GET_TB3_DIRECTION;
       else
-        updatecommandVelocity(0.0, ANGULAR_VELOCITY);
+        updatecommandVelocity(0.0, 1*ANGULAR_VELOCITY);
       break;
 
     default:
