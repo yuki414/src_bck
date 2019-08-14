@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 	<!-- Turtlebot simulator with navigation -->
-	<include file="$(find ase_exploration)/launch/turtlebot_simulator.launch">
+	<include file="$(find ase_exploration)/launch/turtlebot3_simulator.launch">
 		<arg name="map_file" value="$(find ase_exploration)/maps/mit.yaml"/>
 		<arg name="world_file" value="$(find ase_exploration)/maps/stage/mit.world"/>
 	</include>
